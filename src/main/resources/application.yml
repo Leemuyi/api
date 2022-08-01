@@ -1,1 +1,21 @@
-
+server:
+  port: 8080
+  tomcat:
+    max-swallow-size: -1
+  servlet:
+    context-path: /apiService
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/javascript,application/json,application/xml,text/html,text/xml,text/plain,text/css,image/*
+spring:
+  redis:
+    host: 127.0.0.1
+    password: ''
+    database: 0
+    port: 6379
+oss:
+  endpoint: aliyun_oss_  endpoint
+  accessKey:   accessKey
+  secretKey:   secretKey
+  bucketName:   bucketName

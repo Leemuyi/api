@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            width: 480px;
+            margin: 0 10px 0 10px;
+        }
+        tr {
+            border-bottom: 2px solid #0e94ea;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="width: 500px;">
+<div>
+    <p>
+        <span style="text-align: center;font-size: 23px;font-weight: bolder">弹幕情况概要,UID:{{uid}}</span>
+        <br>
+        <span style="float: right">{{queryTime}}</span>
+    </p>
+</div>
+<div>
+    <table>
+        <thead>
+        <tr style="border-bottom: 2px solid #0e94ea;">
+            <td style="width: 140px;">时间</td>
+            <td style="width: 240px">主播</td>
+            <td style="width: 100px">弹幕数量</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{data}}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

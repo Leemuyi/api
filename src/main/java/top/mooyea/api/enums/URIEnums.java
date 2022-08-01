@@ -1,4 +1,8 @@
-package top.mooyea.api.enums;/**
+package top.mooyea.api.enums;
+
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
  * <h1>URIEnums<h1>
  * <p>Copyright (C), 星期二,26,7月,2022</p>
  * <br/>
@@ -23,9 +27,51 @@ package top.mooyea.api.enums;/**
  * </table>
  * <hr>
  * <br/>
- *@author mooye
+ *
+ * @author mooye
  */
 
 
- public enum URIEnums {
+public enum URIEnums {
+    /**
+     * B站用户搜索接口
+     */
+    SEARCH_USER("https://api.bilibili.com/x/web-interface/search/type?keyword=#{keyWord}&search_type=bili_user","#{keyWord}", RequestMethod.GET),
+    /**
+     * 第三方接口查询弹幕
+     */
+    SEARCH_DANMAKU("https://biligank.com/blive/danmaku/#{uid}?rt=false","#{uid}", RequestMethod.GET),
+    /**
+     * 第三方接口查询礼物
+     */
+    SEARCH_GIFT("https://biligank.com/blive/gift/#{uid}?rt=false","#{uid}", RequestMethod.GET),
+    SEARCH_ENTER("https://biligank.com/blive/entry/#{uid}?rt=false","#{uid}", RequestMethod.GET),
+    /**
+     * 获取用户详细信息
+     */
+    SEARCH_USER_INFO("https://api.bilibili.com/x/space/acc/info?mid=#{mid}&jsonp=jsonp","#{mid}", RequestMethod.GET)
+    
+    ;
+    private final String uri;
+    private final String placeholder;
+    private final RequestMethod method;
+    
+    
+    URIEnums(String uri, String placeholder, RequestMethod method) {
+        this.uri = uri;
+        this.placeholder = placeholder;
+        this.method = method;
+    }
+    
+    public String getUri() {
+        return uri;
+    }
+    
+    public String getPlaceholder() {
+        return placeholder;
+    }
+    
+    public RequestMethod getMethod() {
+        return method;
+    }
 }

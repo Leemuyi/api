@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            width: 900px;
+        }
+        tr {
+            border-bottom: 2px solid #0e94ea;
+        }
+        td{
+            text-align: center;
+            width: 25%;
+        }
+    </style>
+</head>
+<body style="width: 900px;">
+<div>
+    <p>
+        <span style="text-align: center;font-size: 23px;font-weight: bolder">近一月礼物概览,UID:{{uid}}</span>
+        <br>
+        <span style="float: right">{{queryTime}}</span>
+    </p>
+</div>
+<div>
+    {{tableData}}
+</div>
+</body>
+</html>
